@@ -1,0 +1,47 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../static/css/Form.css" th:href="@{/css/Form.css}"/>
+        <link
+            href="https://fonts.googleapis.com/css?family=Annie Use Your Telescope"
+            rel="stylesheet"
+            />
+        <author>Leo verdichio</author>
+        <title>Tennis</title>
+    </head>
+    <body>
+        <div class="main">
+            <form action="#" th:action="@{/form}" method="post" th:object="${gameDTO}" class="form">
+                <div>Tournament Name: <input type="text" class="input" th:field="*{nameTorneo}"/></div>
+                <div class="label">
+
+
+                    <label for="sets">number of sets:</label>
+                    <select name="sets" id="sets" th:field="*{cantidadSet}" class="selector">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div>PJ 1: <input type="text" class="input" th:field="*{namePlayer1}" /></div>
+                <div>PJ 2: <input type="text" class="input" th:field="*{namePlayer2}" /></div>
+               
+                <div>
+                   Probabilidad de Player 1:
+                    <input type="number" min="1"max="100" th:field="*{probabilityP1}" />
+
+                    <div>
+                        <br>
+                        Probabilidad de Player 2:
+                        <input type="number" min="1" max="100" />
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn"> PLAY </button>
+            </form>
+        </div>
+                <p th:if="${error !=null}" th:text="${error}" style="color:red"></p>
+    </div>
+</body>
+</html>

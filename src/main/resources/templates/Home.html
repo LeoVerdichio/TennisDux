@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <author>Leo verdichio</author>
+    <link href="../static/css/Home.css" th:href="@{/css/Home.css}" rel="stylesheet" />
+
+    
+    
+    <title>Tennis</title>
+  </head>
+  <body>
+    <div class="start">
+      <div class="main">
+          <img src="../static/images/raqueta.png"  th:src="@{images/raqueta.png}"  class="img"/>
+        <h1 class="title">TENNIS GAME</h1>    
+     
+		 <a th:href = "@{/form}"><button type="submit" class="btn">GO!</button></a>
+      </div>
+    </div>
+  </body>
+</html>

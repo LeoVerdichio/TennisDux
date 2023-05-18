@@ -1,0 +1,45 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/Result.css" th:href="@{/css/Result.css}"/>
+    
+    
+    <title>Tennis</title>
+  </head>
+<body>
+  <div class="game">
+    <div class="title">Ganador torneo: [[${game.getGanadorgame().name}]]</div>
+    <div class="flex-container">
+	  <div class="flex-row">
+		<div class="flex-item"> Player </div>
+		<div class="flex-item" th:each="set,iterador : ${setsJ1}">			
+			<div class="table-item" th:text="Set + ' ' + ${iterador.index + 1}"></div>
+		</div>
+	  </div>
+	  <div class="flex-row">
+		<div class="flex-item"> [[${game.Playeres.get(0).name}]] </div>
+      	<div class="flex-item" th:each="set,iterador : ${game.getPlayeres().get(0).sets}">
+			  [[${set > 6 ? "6 (" + (set - 6) + ")" : set}]]
+		  </div>
+	  </div>
+	  <div class="flex-row">
+		<div class="flex-item"> [[${game.Playeres.get(1).name}]] </div>
+      	<div class="flex-item" th:each="set,iterador : ${game.getPlayeres().get(1).sets}">
+      		[[${set > 6 ? "6 (" + (set - 6) + ")" : set}]]
+      	</div>
+	  </div>
+      <div class="flex-row">
+		  <form action="/game" method="get" class="flex-item-form">
+		    <button class="btn">Rematch</button>
+    	  </form>
+    	  <form action="/form" method="get" class="flex-item-form">
+		    <button class="btn">Back </button>
+    	  </form>
+	  </div>
+         <p th:if="${error !=null}" th:text="${error}" style="color:red"></p>
+    </div>
+  </div>
+</body>
+</html>

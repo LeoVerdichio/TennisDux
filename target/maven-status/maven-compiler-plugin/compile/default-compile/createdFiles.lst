@@ -1,0 +1,6 @@
+com\tennisdux\TennisDuxApplication.class
+com\tennisdux\Model\GameDTO.class
+com\tennisdux\Model\Player.class
+com\tennisdux\Logic\Simulator.class
+com\tennisdux\Model\Game.class
+com\tennisdux\Controller\GameController.class
