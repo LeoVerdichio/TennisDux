@@ -3,7 +3,7 @@
 /* 1) Todos los productos del rubro "librería", creados hoy. */
 select nombre, fecha_creacion, rubro from (producto
 left join rubro on producto.id_rubro = rubro.id_rubro)
-where rubro = 'Libreria' AND fecha_creacion = CURDATE();
+where rubro = 'libreria' AND fecha_creacion = CURDATE();
 
 
 /* 2) Monto total vendido por cliente (mostrar nombre del cliente y monto). */
